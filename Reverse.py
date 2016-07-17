@@ -48,10 +48,10 @@ def full():
     return True
 
 def game():
-    turn = False
+    turn = True
     while not full():
         print("#" * 50)
-        if not turn:
+        if turn:
             print("Black Turn")
             Zi = Hei
         else:
