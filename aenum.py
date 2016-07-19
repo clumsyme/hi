@@ -19,9 +19,12 @@ class Planet(Enum):
         # universal gravitational constat  m3 kg-1 s-2
         G = 6.67300E-11
         return G * self.mass / (self.radius * self.radius)
-    @surface_gravity.setter
-    def surface_gravity(self, value):
-        self.surface_gravity = value
+    
+    #@surface_gravity.setter
+    #the setter of property
+    #def surface_gravity(self, value):
+        #self.surface_gravity = value
+        
 
 for planet in Planet:
     print("Gravity on surface of {} is {}."
