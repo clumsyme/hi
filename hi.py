@@ -8,7 +8,7 @@ class Dog(object):
     def bark(self):
         print("I'm {}, Wang!".format(self.name))
 
-a = Dog('Tom')
+a = Dog('Tommy')
 a.bark()
 print(a.name)
 

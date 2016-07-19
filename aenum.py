@@ -21,7 +21,7 @@ class Planet(Enum):
         return G * self.mass / (self.radius * self.radius)
     
     #@surface_gravity.setter
-    #the setter of property
+    #the setter of property.
     #def surface_gravity(self, value):
         #self.surface_gravity = value
         
