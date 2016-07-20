@@ -66,6 +66,8 @@ L[A] = A + merge(BDEO,CDFO,BC)
 """
 
 #<mro.py>
+# This is a code by Michele Simionato who published it here:
+# https://www.python.org/download/releases/2.3/mro/
 
 """C3 algorithm by Samuele Pedroni (with readability enhanced by me)."""
 
