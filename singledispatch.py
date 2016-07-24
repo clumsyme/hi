@@ -43,7 +43,7 @@ for obj in to_be_introed:
     print("Function intro behave on type {}:".format(type(obj).__name__))
     intro(obj)
 
-#Here's the outcomes:'
+#Here's the outcomes:
 # Function intro behave on type type:
 #     Hello, world!
 # Function intro behave on type str:
