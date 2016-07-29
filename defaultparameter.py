@@ -127,3 +127,46 @@ def foo(a=[]):
 #     this function will return [1] every time insteed [1]\[1,1]\[1,1,1]... in the mutable().
 #     WHY?Because every call does not change the value of init memory, so every call with d-value get same value.
 #     While mutable() does change the value of init memory, so every call with d-value get non-same value.
+
+# In fact， if we can find out the value in memory, we would know it better.
+# Luckly, the ctype module provide a function for us to know the value in 
+# memory with a id of ID.
+import ctypes
+def mem_value(ID):
+    """return the value in memory with id:ID."""
+	return ctypes.cast(ID, ctypes.py_object).value
+
+def i(var=1):
+    init_id = id(var)
+	print("Before var+=1, var.id and value in init memory:")
+	print(id(var))
+	print(mem_value(init_id))
+	var += 1
+	print("After i+=1, var.id and value in init memory:")
+	print(id(var))
+	print(mem_value(init_id))
+# >>> i()
+# Before var+=1, var.id and value in init memory:
+# 1537409488
+# 1
+# After i+=1, var.id and value in init memory:
+# 1537409520                                       # so, id changed, which means the pointer of var changed to another memory. 
+# 1                                                # but value in init memory DOES NOT change.
+
+
+def li(var=[1]):
+	init_id = id(var)
+	print("Before var+=[1], var.id and value in init memory:")
+	print(id(var))
+	print(mem_value(init_id))
+	var += [1]
+	print("After i+=1, var.id and value in init memory:")
+	print(id(var))
+	print(mem_value(init_id))	
+# >>> li()
+# Before var+=[1], var.id and value in init memory:
+# 59061512
+# [1]
+# After i+=1, var.id and value in init memory:
+# 59061512                                        # so, id Does Not change,  which means the pointer of var still point to init memory.
+# [1, 1]                                          # but value in init memory DID change.
