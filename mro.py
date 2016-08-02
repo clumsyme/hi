@@ -1,3 +1,5 @@
+# This summary comes from the article of "The Python 2.3 Method Resolution Order"
+# from https://www.python.org/download/releases/2.3/mro/
 """
 L[C(B1 ... BN)] = C + merge(L[B1] ... L[BN], B1 ... BN)
 L[object] = object.
