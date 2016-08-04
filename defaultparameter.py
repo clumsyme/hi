@@ -66,6 +66,16 @@ def foo(a=[]):
                 result = values[n]
             return result
 
+#        which will be more readable by this:
+        def fib(n, values = {}):
+	        if n<2:
+		        values[n] = n
+	        else:
+		        if n not in values:
+			        values[n] = fib(n-1)+fib(n-2)
+	        return values[n]
+
+
 #     # THIS efficiently reduce recursion repeat calculations, but still has a dict stored in memory.
 #     # SO, it's still not as good as the iter one which is:
           def fib(n):
