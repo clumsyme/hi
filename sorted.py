@@ -19,3 +19,6 @@ sorted_li = sorted(li, key = calc_value)
 
 print(sorted_li)
 # ['rac', 'tb', 'bc', 'ade', 'cfb', 'asc']
+
+# the sorted function has a default-parameter 'reverse=False' can be 
+# set to request the result in descending order.
